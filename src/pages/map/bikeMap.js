@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import axios from './../../axios/index'
-import {Card,Form} from 'antd'
+import {Card} from 'antd'
 import BaseForm from './../../components/BaseForm/index'
 
 export default class bikeMap extends Component {
@@ -29,7 +29,7 @@ export default class bikeMap extends Component {
                 params:this.params
             }
         }).then((res)=>{
-            if(res.code == 0){
+            if(res.code === 0){
                 this.setState({
                     total_count:res.result.total_count
                 })

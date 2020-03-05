@@ -23,7 +23,7 @@ export default class High extends Component {
                 }
             }
         }).then((res)=>{
-            if(res.code == 0){
+            if(res.code === 0){
                 res.result.list.map((item,index)=>{
                     item.key = index;
                 })
@@ -65,7 +65,7 @@ export default class High extends Component {
                 dataIndex:'sex',
                 width:80,
                 render(sex){
-                    return sex == 1 ? '男' : '女'
+                    return sex === 1 ? '男' : '女'
                 }
             },{
                 title:'状态',
@@ -128,7 +128,7 @@ export default class High extends Component {
                 dataIndex:'sex',
                 width:80,
                 render(sex){
-                    return sex == 1 ? '男' : '女'
+                    return sex === 1 ? '男' : '女'
                 }
             },{
                 title:'状态',
@@ -276,7 +276,7 @@ export default class High extends Component {
                 title:'性别',
                 dataIndex:'sex',
                 render(sex){
-                    return sex == 1 ? '男' : '女'
+                    return sex === 1 ? '男' : '女'
                 }
             },{
                 title:'年龄',
@@ -336,7 +336,7 @@ export default class High extends Component {
                 title:'性别',
                 dataIndex:'sex',
                 render(sex){
-                    return sex == 1 ? '男' : '女'
+                    return sex === 1 ? '男' : '女'
                 }
             },{
                 title:'年龄',

@@ -25,7 +25,7 @@ class FilterForm extends React.Component{
                 let initialValue = item.initialValue || '';
                 let placeholder = item.placeholder;
                 let width = item.width;
-                if (item.type == '城市') {
+                if (item.type === '城市') {
                     const city = <Form.Item label="城市" key={field}>
                         {
                             getFieldDecorator('city',{
@@ -41,7 +41,7 @@ class FilterForm extends React.Component{
                         }
                     </Form.Item>;
                     formItemList.push(city)
-                }else if(item.type == '时间查询'){
+                }else if(item.type === '时间查询'){
                     const begin_time = <Form.Item label='时间查询' key={field}>
                     {
                         getFieldDecorator('begin_time',{
@@ -60,7 +60,7 @@ class FilterForm extends React.Component{
                     }
                 </Form.Item>
                 formItemList.push(end_time)
-                }else if(item.type == 'INPUT'){
+                }else if(item.type === 'INPUT'){
                     const INPUT = <Form.Item label={label} key={field}>
                     {
                         getFieldDecorator([field],{
@@ -71,7 +71,7 @@ class FilterForm extends React.Component{
                     }
                 </Form.Item>
                 formItemList.push(INPUT)
-                }else if(item.type == 'SELECT'){
+                }else if(item.type === 'SELECT'){
                     const SELECT = <Form.Item label={label} key={field}>
                     {
                         getFieldDecorator([field],{
@@ -87,7 +87,7 @@ class FilterForm extends React.Component{
                     }
                 </Form.Item>
                 formItemList.push(SELECT)
-                }else if(item.type == 'CHECKBOX'){
+                }else if(item.type === 'CHECKBOX'){
                     const CHECKBOX = <Form.Item label={label} key={field}>
                     {
                         getFieldDecorator([field],{
@@ -101,7 +101,7 @@ class FilterForm extends React.Component{
                     }
                 </Form.Item>
                 formItemList.push(CHECKBOX)
-                }else if(item.type == 'DATE'){
+                }else if(item.type === 'DATE'){
                     const Date = <Form.Item label={label} key={field}>
                     {
                         getFieldDecorator([field])(

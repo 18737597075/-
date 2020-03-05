@@ -32,7 +32,7 @@ export default class Permission extends Component {
                 params:data
             }
         }).then((res)=>{
-            if(res.code == 0){
+            if(res.code === 0){
                 this.setState({
                     isRoleVisible:false
                 })
@@ -122,7 +122,7 @@ export default class Permission extends Component {
                     title:dataSource[i].user_name,
                     status:dataSource[i].status
                 }
-                if(data.status == 1){
+                if(data.status === 1){
                     targetKeys.push(data.key);
                 }
                 mockData.push(data);
@@ -170,7 +170,7 @@ export default class Permission extends Component {
                 title:'使用状态',
                 dataIndex:'status',
                 render(status){
-                    return status == 1 ? '启用' : '停用'
+                    return status === 1 ? '启用' : '停用'
                 }
             },{
                 title:'授权时间',
@@ -364,13 +364,13 @@ class RoleAuthForm extends Component {
     };
 
     render() {
-        const {getFieldDecorator} = this.props.form;
+        // const {getFieldDecorator} = this.props.form;
         const formItemLayout = {
             labelCol:{span:5},
             wrapperCol:{span:19}
         }
         const detail_info = this.props.detailInfo;
-        const menuInfo = this.props.menuInfo;
+        // const menuInfo = this.props.menuInfo;
         return (
             <Form layout='horizontal' >
                 <Form.Item label='角色名称' {...formItemLayout}>

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {Card,Button,Form,Modal, message,Select} from 'antd';
+import {Card,Button,Form,Modal, message} from 'antd';
 import axios from '../../axios/index'
 import Utils from '../../util/utils'
 import BaseForm from '../../components/BaseForm/index'
@@ -47,7 +47,7 @@ export default class Order extends Component {
     }
 
     requestList = ()=>{
-        let _this=this;
+        // let _this=this;
         axios.requestList(this,'/order/list',this.params,true)
     }
     //订单结束确认
@@ -68,7 +68,7 @@ export default class Order extends Component {
                 }
             }
         }).then((res)=>{
-            if(res.code == 0){
+            if(res.code === 0){
                 this.setState({
                     orderInfo:res.result,
                     orderConfirmVisble:true
@@ -87,7 +87,7 @@ export default class Order extends Component {
                 }
             }
         }).then((res)=>{
-            if(res.code == 0){
+            if(res.code === 0){
                 message.success('订单结束成功')
                 this.setState({
                     orderConfirmVisble:false
@@ -148,7 +148,7 @@ export default class Order extends Component {
                 title:'状态',
                 dataIndex:'status',
                 render(status){
-                    return status == 1 ? '进行中' : '行驶结束'
+                    return status === 1 ? '进行中' : '行驶结束'
                 }
             },
             {
